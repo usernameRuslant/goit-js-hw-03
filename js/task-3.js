@@ -1,34 +1,27 @@
-//==========================================================================================================================
-// Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути в довільному регістрі, наприклад SPAM або sAlE.
+// Напиши функцію filterArray(numbers, value),
+//  яка приймає масив чисел (numbers) та значення (value) як параметри.
+//  Функція повинна повертати новий масив
+// лише тих чисел із масиву numbers, які більші за значення value.
 
-// Доповни код функції таким чином, що:
+// Усередині функції:
 
-// Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
-// Якщо в рядку відсутні заборонені слова, функція повертає буль false
-//==========================================================================================================================
-function checkForSpam(message) {
-  // const cM = message.toLowerCase();
-  // console.log(cM);
-  // if (cM.includes('spam')) {
-  //   return true;
-  // } else if (cM.includes('sale')) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-  //2
-  const cM = message.toLowerCase();
-  return cM.includes('spam') || cM.includes('sale');
-  //3
-  // return (
-  //   message.toLowerCase().includes('spam') ||
-  //   message.toLowerCase().includes('sale')
-  // );
-}
-console.log(checkForSpam('Latest technology news'));
-console.log(checkForSpam('JavaScript weekly newsletter'));
-console.log(checkForSpam('Get best sale offers now!'));
-console.log(checkForSpam('Amazing SalE, only tonight!'));
-console.log(checkForSpam('Trust me, this is not a spam message'));
-console.log(checkForSpam('Get rid of sPaM emails. Our book in on sale!'));
-console.log(checkForSpam('[ SPAM] How to earn fast money?'));
+// Створи порожній масив, у який будеш додавати підходящі числа.
+// Використай цикл для ітерації кожного елемента масиву numbers.
+// Використовуй умовний оператор if усередині циклу для перевірки кожного елемента и додавання до свого масиву.
+// Поверни свій новий масив з підходящими числами як результат.
+//=====================================================================================
+const filterArray = function (numbers, value) {
+  const newArr = [];
+  for (const number of numbers) {
+    if (number > value) {
+      newArr.push(number);
+    }
+  }
+  return newArr;
+};
+
+console.log(filterArray([1, 2, 3, 4, 5], 3));
+console.log(filterArray([1, 2, 3, 4, 5], 4));
+console.log(filterArray([1, 2, 3, 4, 5], 5));
+console.log(filterArray([12, 24, 8, 41, 76], 38));
+console.log(filterArray([12, 24, 8, 41, 76], 20));
